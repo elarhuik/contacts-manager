@@ -1,11 +1,13 @@
 // @flow
 import React from 'react';
 import ContactListItem from './ListItem';
+import { fakeData } from './ContactsConstants';
 import type { Person } from './ContactsTypes';
 
+
 type ContactsViewProps = {
-  page?: number,
   contactsList: Array<Person>,
+  fetchPersonsData: () => void,
 };
 
 type ContactsViewState = {
@@ -18,21 +20,30 @@ class ContactsView extends React.Component<ContactsViewProps, ContactsViewState>
   }
 
   static defaultProps = {
-    page: 0,
     contactsList: [],
+  }
+
+  componentDidMount() {
+    const { fetchPersonsData } = this.props;
+    fetchPersonsData();
   }
 
   render() {
     const { contactsList } = this.props;
+
     return (
-      <div className="contacts-list-container">
-        {
-          contactsList.map(
-            (person: Person) => {
-              return (<ContactListItem { ...person } />);
-            }
-          )
-        }
+      <div className="contacts">
+        <h1>People's List</h1>
+        <div className="separator"/>
+        <div className="list" onDragEnd={(e)=> console.log(e)}>
+          {
+            contactsList.map(
+              (person: Person, index: number) => {
+                return (<ContactListItem key={index} { ...person } />);
+              }
+            )
+          }
+        </div>
       </div>
     );
   }

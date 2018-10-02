@@ -1,0 +1,32 @@
+export const fakeData = [
+  {
+    id: 1,
+    name: 'Ricky Lake',
+    organization: 'org',
+    email: 'email',
+    phone: '(313) 67 789 898)',
+    groups: 'string',
+    location: 'string',
+    order: 1,
+  },
+  {
+    id: 2,
+    name: 'Micky wakke',
+    organization: 'org',
+    email: 'email',
+    phone: '(555) 67 555 898)',
+    groups: 'string',
+    location: 'string',
+    order: 2,
+  },
+  {
+    id: 3,
+    name: 'Shaun Bake',
+    organization: 'org',
+    email: 'email',
+    phone: '(222) 67 777 898)',
+    groups: 'string',
+    location: 'string',
+    order: 3,
+  },
+];

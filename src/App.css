@@ -1,4 +1,5 @@
 @import url("styles/fonts.css");
+@import url("styles/contacts.css");
 
 * {
   box-sizing: border-box;
@@ -6,13 +7,16 @@
 
 #root {
   max-width: 1200px;
+  min-width: 320px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
 .app-header {
   background-color: #222;
-  padding: 20px;
+  padding: 15px;
   color: white;
+  display: flex;
 }
 
 .app-header .app-title {
@@ -25,4 +29,16 @@
 
 .app-header .app-title:hover {
   cursor: pointer;
+}
+
+h1 {
+  font-family: bold;
+  font-size: 1.11em;
+  padding: 10px 15px;
+  color: #434343;
+}
+
+.separator {
+  border-top: 1px solid #e7e7e7;
+  margin: 0 0 10px 0;
 }

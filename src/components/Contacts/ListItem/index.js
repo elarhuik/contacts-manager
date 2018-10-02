@@ -9,9 +9,9 @@ class ContactListItem extends React.PureComponent<ContactListItemProps> {
     const { name, organization } = this.props;
 
     return (
-      <div className="contact-list-item" >
+      <div className="contact-item" draggable>
         <div className="details">
-          <p className="name">{name}</p>
+          <span className="name">{name}</span>
           <span className="organization">{organization}</span>
         </div>
         <div className="avatar">
@@ -20,12 +20,12 @@ class ContactListItem extends React.PureComponent<ContactListItemProps> {
           </span>
         </div>
       </div>
-    )
+    );
   }
 
   getInitials(name: string): string {
     const names = name.split(' ');
-    return names[0][0] + names.reverse()[0][0];
+    return (names[0][0] + names.reverse()[0][0]).toUpperCase();
   }
 };
 

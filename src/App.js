@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
-import ContactsView from './components/Contacts/ContactsView';
+import ContactsView from './components/Contacts/';
 import 'normalize.css';
 import './App.css';
 

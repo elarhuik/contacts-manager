@@ -1,0 +1,1 @@
+export const getPersonsData = (state) => state.ContactsReducer.personsData;
