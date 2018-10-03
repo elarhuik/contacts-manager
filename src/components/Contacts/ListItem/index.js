@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import Avatar from '../../Avatar';
 import type { Person } from '../ContactsTypes';
 
 type ContactListItemProps = $Shape<Person>;
@@ -14,11 +15,7 @@ class ContactListItem extends React.PureComponent<ContactListItemProps> {
           <span className="name">{name}</span>
           <span className="organization">{organization}</span>
         </div>
-        <div className="avatar">
-          <span className="initials">
-            {this.getInitials(name)}
-          </span>
-        </div>
+        <Avatar name={name} />
       </div>
     );
   }

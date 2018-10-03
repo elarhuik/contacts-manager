@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import ContactListItem from './ListItem';
-import { fakeData } from './ContactsConstants';
+//import { fakeData } from './ContactsConstants'; use as fallback
 import type { Person } from './ContactsTypes';
 
 
