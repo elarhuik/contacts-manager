@@ -17,7 +17,7 @@ class Avatar extends React.PureComponent<AvatarProps> {
           </span>
           <img src={img} title="user avatar" alt="" />
         </div>
-    );
+    )
   }
 
   getInitials(name: string): string {

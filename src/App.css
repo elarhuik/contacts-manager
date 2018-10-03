@@ -1,6 +1,7 @@
 @import url("styles/fonts.css");
 @import url("styles/contacts.css");
 @import url("styles/avatar.css");
+@import url("styles/spinner.css");
 
 * {
   box-sizing: border-box;

@@ -10,16 +10,19 @@ class ContactListItem extends React.PureComponent<ContactListItemProps> {
     const { name, organization } = this.props;
 
     return (
-      <div className="contact-item" draggable>
+      <div className="contact-item" draggable onClick={this.renderModal}>
         <div className="details">
           <span className="name">{name}</span>
           <span className="organization">{organization}</span>
         </div>
         <Avatar name={name} />
       </div>
-    );
+    )
   }
 
+  renderModal = () => {
+    console.log(this.props);
+  }
 
 };
 
