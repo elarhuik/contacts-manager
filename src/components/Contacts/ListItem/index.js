@@ -20,10 +20,7 @@ class ContactListItem extends React.PureComponent<ContactListItemProps> {
     );
   }
 
-  getInitials(name: string): string {
-    const names = name.split(' ');
-    return (names[0][0] + names.reverse()[0][0]).toUpperCase();
-  }
+
 };
 
 export default ContactListItem;
