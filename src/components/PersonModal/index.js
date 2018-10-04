@@ -1,4 +1,4 @@
 // @flow
-import PersonModal from './PersonModalContainer';
+import PersonModal from './PersonModalView';
 
 export default PersonModal;

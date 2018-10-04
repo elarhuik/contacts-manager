@@ -1,0 +1,1 @@
+export const getModalData = state => state.ModalWrapper.modalData;

@@ -6,13 +6,13 @@ type PersonModalProps = {
   name: string,
   phone: string,
   email: string,
-  organization: string,
   assistant: string,
+  organization: string,
   groups: string,
   location: string,
 };
 
-export default class PersonModalView extends React.PureComponent<PersonModalProps> {
+export default class extends React.PureComponent<PersonModalProps> {
   render() {
     const {
       name,

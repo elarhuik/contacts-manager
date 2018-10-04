@@ -5,8 +5,9 @@ export type Person = {
   id: number,
   name: string,
   organization: string,
-  email: Array<Values>,
-  phone: Array<Values>,
+  assistant: string,
+  email: string,
+  phone: string,
   groups: string,
   location: string,
   order: number,
@@ -14,8 +15,8 @@ export type Person = {
 
 export type ContactsState = {
   personsData: Array<Person>,
-}
+};
 
 export type StoreState = {
   ContactsReducer: ContactsState,
-}
+};

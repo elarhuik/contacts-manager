@@ -66,10 +66,10 @@ export type Person = {
   last_incoming_mail_time: string | null,
   last_outgoing_mail_time: string | null,
   label: string | null,
-  '679c097ebd9753555034faec27025a0105a7ecd7': string | null,    //custom field
-  '030afe8bdb9f4b19f74febafa2d5eaba05ad21de': string,           //custom field
-  d91f23abedf6a3dec70ebe7191eb55c590dc4c27: string,             //custom field
-  aef882f746fafeba45f6456fedb2cece208d94a5: number,             //custom field
+  '679c097ebd9753555034faec27025a0105a7ecd7': string | null,    //custom field assistant
+  '030afe8bdb9f4b19f74febafa2d5eaba05ad21de': string,           //custom field location
+  d91f23abedf6a3dec70ebe7191eb55c590dc4c27: string,             //custom field groups
+  aef882f746fafeba45f6456fedb2cece208d94a5: number,             //custom field order
   org_name: string,
   owner_name: string,
   cc_email: string,
