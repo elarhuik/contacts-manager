@@ -33,18 +33,6 @@
   margin-left: auto;
 }
 
-.contact-item .avatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  overflow: hidden;
-  background: #f3e3ff;
-  color: #1f68c9;
-}
-
 .contact-item span {
   font-family: 'regular', sans-serif;
 }
