@@ -3,9 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ContactsView from './ContactsView';
 import { fetchPersonsData } from './ContactsActions';
-import {
-	getPersonsData,
-} from './ContactsSelectors';
+import { showModal } from '../ModalWrapper/ModalWrapperActions';
+import { getPersonsData } from './ContactsSelectors';
 
 
 const mapStateToProps = state => ({
@@ -14,7 +13,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchPersonsData,
-  //showUserModal,
+  showModal,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactsView);

@@ -2,7 +2,7 @@
 import React from 'react';
 import Avatar from '../Avatar';
 
-type PersonModalProps = {
+type PersonModalProps = any | {
   name: string,
   phone: string,
   email: string,
@@ -12,14 +12,14 @@ type PersonModalProps = {
   location: string,
 };
 
-export default class extends React.PureComponent<PersonModalProps> {
+class PersonModal extends React.Component<PersonModalProps> {
   render() {
     const {
       name,
       phone,
       email,
-      organization,
       assistant,
+      organization,
       groups,
       location,
     } = this.props;
@@ -28,7 +28,7 @@ export default class extends React.PureComponent<PersonModalProps> {
       <div className="person-modal">
         <div className="title">
           <p>Personal Information</p>
-          <p>X</p>
+          <p>{name}</p>
         </div>
         <div className="avatar">
           <Avatar name={name} />
@@ -50,4 +50,6 @@ export default class extends React.PureComponent<PersonModalProps> {
       </div>
     );
   }
-}
+};
+
+export default PersonModal;

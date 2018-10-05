@@ -1,1 +1,0 @@
-export const getModalData = (state) => state.PersonModalReducer.personsData;

@@ -8,14 +8,13 @@ type AvatarProps = {
 
 class Avatar extends React.PureComponent<AvatarProps> {
   render() {
-    const { name, img } = this.props;
-
+    const { name } = this.props;
+    
     return (
       <div className="avatar">
           <span className="initials">
             {this.getInitials(name)}
           </span>
-          <img src={img} title="avatar" alt={name} />
         </div>
     )
   }

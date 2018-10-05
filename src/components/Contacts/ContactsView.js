@@ -2,14 +2,13 @@
 import React from 'react';
 import ContactListItem from './ListItem';
 import Loader from '../Loader';
-import PersonModal from '../PersonModal';
-//import { fakeData } from './ContactsConstants'; use as fallback
 import type { Person } from './ContactsTypes';
 
 
 type ContactsViewProps = {
   contactsList: Array<Person>,
   fetchPersonsData: () => void,
+  showModal: (data: Person) => void,
 };
 
 type ContactsViewState = {
@@ -38,7 +37,7 @@ class ContactsView extends React.Component<ContactsViewProps, ContactsViewState>
   }
 
   render() {
-    const { contactsList } = this.props;
+    const { contactsList, showModal } = this.props;
     const { isLoading } = this.state;
 
     if (isLoading) {
@@ -49,11 +48,11 @@ class ContactsView extends React.Component<ContactsViewProps, ContactsViewState>
       <div className="contacts">
         <h1>People's List</h1>
         <div className="separator"/>
-        <div className="list" onDragEnd={(e)=> console.log(e)}>
+        <div className="list">
           {
             contactsList.map(
               (person: Person, index: number) => {
-                return (<ContactListItem key={index} { ...person } />);
+                return (<ContactListItem key={index} data={person} showModal={showModal} />);
               }
             )
           }
@@ -61,15 +60,6 @@ class ContactsView extends React.Component<ContactsViewProps, ContactsViewState>
       </div>
     )
   }
-
-  getPeople(pageNumber?: number) {
-    //todo for pagination
-  }
-
-  renderModal(personData: Person) {
-    return <PersonModal {...personData} />;
-  }
-
 }
 
 export default ContactsView;

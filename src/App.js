@@ -1,10 +1,13 @@
+// @flow
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
+import PersonModal from './components/PersonModal';
+import ModalWrapper from './components/ModalWrapper';
 import ContactsView from './components/Contacts/';
 import 'normalize.css';
 import './App.css';
 
-class App extends React.Component {
+class App extends React.Component<any> {
   render() {
     return (
       <div className="app-wrapper">
@@ -13,8 +16,10 @@ class App extends React.Component {
         </header>
         <main>
           <Route path="/:pageNumber?" component={ContactsView} />
-        
         </main>
+        <ModalWrapper>
+          <PersonModal />
+        </ModalWrapper>
       </div>
     );
   }
