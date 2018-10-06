@@ -3,13 +3,14 @@ import React from 'react';
 
 class ModalWrapper extends React.Component<any> {
   render() {
-    const { modalData, children } = this.props;
+    const { modalData, children, hideModal } = this.props;
+    window.hideModal = hideModal;
     const childWitModalData = React.Children.map(children, child =>
-      React.cloneElement(child, { ...modalData }));
+      React.cloneElement(child, { ...modalData, hideModal }));
 
     if (modalData) {
       return (
-        <div className="modal-overlay">
+        <div className="modal-wrapper">
           {childWitModalData}
         </div>
       );

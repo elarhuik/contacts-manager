@@ -10,6 +10,7 @@ type PersonModalProps = any | {
   organization: string,
   groups: string,
   location: string,
+  hideModal: () => void,
 };
 
 class PersonModal extends React.Component<PersonModalProps> {
@@ -22,33 +23,49 @@ class PersonModal extends React.Component<PersonModalProps> {
       organization,
       groups,
       location,
+      hideModal,
     } = this.props;
 
     return (
-      <div className="person-modal">
-        <div className="title">
+      <div className="modal-container person-modal">
+        <div className="header">
           <p>Personal Information</p>
-          <p>{name}</p>
+          <div className="close-button" onClick={hideModal}></div>
         </div>
-        <div className="avatar">
-          <Avatar name={name} />
-          <p className="person-name">{name}</p>
-          <p className="phone">{phone}</p>
+        <div className="body">
+          <div className="preview">
+            <Avatar name={name} />
+            <p className="name">{name}</p>
+            <p className="phone">{this.formatPhone(phone)}</p>
+          </div>
+          <div className="details">
+            <dl>
+              <dt>Email</dt>
+              <dd><a href={`mailto:${email}`}>{email}</a></dd>
+              <dt>Organization</dt>
+              <dd>{organization}</dd>
+              <dt>Assistant</dt>
+              <dd>{assistant}</dd>
+              <dt>Groups</dt>
+              <dd>{groups}</dd>
+              <dt>Location</dt>
+              <dd>{location}</dd>
+            </dl>
+          </div>
         </div>
-        <dl className="details">
-          <dt>Email</dt>
-          <dd>{`<a href="mailto:${email}">${email}</a>`}</dd>
-          <dt>Organization</dt>
-          <dd>{organization}</dd>
-          <dt>Assistant</dt>
-          <dd>{assistant}</dd>
-          <dt>Groups</dt>
-          <dd>{groups}</dd>
-          <dt>Location</dt>
-          <dd>{location}</dd>
-        </dl>
+        <div className="footer">
+          <button onClick={hideModal}>Back</button>
+        </div>
       </div>
     );
+  }
+
+  formatPhone(phoneNumber: string): string {
+    const number = phoneNumber.split(' ');
+    const countryCode = number[0].replace(/\D/g, '');
+    const digits = number[1].replace(/\D/g, ' ');
+
+    return `+${countryCode} ${digits}`;
   }
 };
 

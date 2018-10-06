@@ -1,0 +1,126 @@
+.modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-container {
+  box-shadow: 4px 4px 44px 1px rgba(0,0,0,0.3);  
+  -webkit-box-shadow: 4px 4px 44px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 4px 4px 44px 1px rgba(0,0,0,0.3);
+  max-width: 400px;
+}
+
+.person-modal {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.person-modal .header {
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e7e7e7;
+  font-family: 'bold', sans-serif;
+  color: #121212;
+}
+
+.person-modal .header p {
+  margin: 15px 0;
+}
+
+.person-modal .footer {
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+  background-color: #f7f7f7;
+  border-top: 1px solid #e7e7e7;
+}
+
+.person-modal .footer button {
+  font-family: 'bold', sans-serif;
+  padding: 10px 20px;
+  margin: 15px 0;
+  margin-left: auto;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.person-modal .body {
+  padding: 20px;
+  flex: 1;
+}
+
+.person-modal .body .details {
+  min-height: 225px;
+}
+
+.person-modal .preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 0 0 20px 0;
+}
+
+.person-modal .preview .avatar {
+  margin-bottom: 15px;
+}
+
+.person-modal .preview .name,
+.person-modal .preview .phone {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.person-modal .preview .name {
+  font-family: 'bold', sans-serif;
+  color: #121212;
+  font-size: 1.1em;
+}
+
+.person-modal .preview .phone {
+  color: #00dd74;
+  font-size: 1.2em;
+}
+
+.person-modal dl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+.person-modal dl dt {
+  width: 30%;
+  text-align:right;
+  font-family: 'bold', sans-serif;
+  color: #727272;
+  margin: 10px 0;
+}
+
+.person-modal dl dd {
+  width: 70%;
+  font-family: 'regular', sans-serif;
+  color: #bebebe;
+  margin-inline-start: 0;
+  padding-left: 15px;
+  margin: 10px 0;
+}
+
+.person-modal dl dd a {
+  text-decoration: none;
+  color: #bebebe;
+}
