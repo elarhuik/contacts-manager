@@ -58,6 +58,10 @@
   font-size: 0.9em;
 }
 
+.person-modal .footer button:hover {
+  cursor: pointer;
+}
+
 .person-modal .body {
   padding: 20px;
   flex: 1;
