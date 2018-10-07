@@ -54,6 +54,8 @@
   padding: 10px 20px;
   margin: 15px 0;
   margin-left: auto;
+  border: 1px solid #e7e7e7;
+  background-color: #fff;
   border-radius: 3px;
   font-size: 0.9em;
 }
@@ -86,7 +88,7 @@
 .person-modal .preview .name,
 .person-modal .preview .phone {
   margin: 0;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
 }
 
 .person-modal .preview .name {
@@ -97,7 +99,7 @@
 
 .person-modal .preview .phone {
   color: #00dd74;
-  font-size: 1.2em;
+  font-size: 1.05em;
 }
 
 .person-modal dl {

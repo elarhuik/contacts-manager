@@ -29,7 +29,8 @@ class ContactListItem extends React.PureComponent<ContactListItemProps> {
     )
   }
 
-  renderModal = () => {
+  renderModal = (e: any) => {
+    e.preventDefault();
     const { showModal, data } = this.props;
     showModal(data);
   }
