@@ -4,7 +4,7 @@ A react app for managing contacts via Pipedrive API
 
 ## Import contacts
 
-The table describes the format and data types for the imported data. Be sure to create custom fields for 'Groups', 'Location' and 'Order'.
+The table describes the format and data types for the imported data. Be sure to create custom fields for 'Groups', 'Location' and 'Order'. You can also use the .csv in /import_data.
 
 | Name    | Organization | Email  | Phone  | Groups | Assistant | Location | Order  |
 | ------- | ------------ | ------ | ------ | ------ | --------- | -------- | ------ |
