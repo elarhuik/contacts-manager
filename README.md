@@ -13,6 +13,9 @@ The table describes the format and data types for the imported data. Be sure to 
 
 Don't forget to use the correct API field names, that are generated for the custom fields. Sample in /api/types.js.
 
+Alternatively, you can skip the Pipedrive setup and use mock data, provided under /api/mock.js.
+To do this, just change fetchPersonsData() accordingly in /components/Contacts/ContactsActions.js.
+
 ## Launching the app
 
 You must have node.js installed (latest version preferably).
@@ -23,3 +26,4 @@ npm start
 ```
 
 Open your browser and go to http://localhost:3000/.
+
