@@ -12,3 +12,14 @@ The table describes the format and data types for the imported data. Be sure to 
 
 
 Don't forget to use the correct API field names, that are generated for the custom fields. Sample in /api/types.js.
+
+## Launching the app
+
+You must have node.js installed (latest version preferably).
+Then in the root directory of this repo, run these commands
+```
+npm install
+npm start
+```
+
+Open your browser and go to http://localhost:3000/.
