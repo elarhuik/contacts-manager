@@ -11,12 +11,4 @@ The table describes the format and data types for the imported data. Be sure to 
 | string  | string       | string | number | string | string    | string   | number |
 
 
-
-## Stack milestones
-React +
-Flow  +
-Pipedrive +
-Redux +
-Redux-forms -
-Request-promise +
-Router +
+Don't forget to use the correct API field names, that are generated for the custom fields. Sample in /api/types.js.
