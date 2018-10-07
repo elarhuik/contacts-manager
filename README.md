@@ -4,6 +4,8 @@ A react app for managing contacts via Pipedrive API
 
 ## Import contacts
 
+You will need to create a Pipedrive (demo) account and add new contacts under your account. Then You can make use of their API for fetching the data.
+
 The table describes the format and data types for the imported data. Be sure to create custom fields for 'Groups', 'Location' and 'Order'. You can also use the .csv in /import_data.
 
 | Name    | Organization | Email  | Phone  | Groups | Assistant | Location | Order  |
