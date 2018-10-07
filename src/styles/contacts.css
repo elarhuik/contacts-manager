@@ -4,6 +4,22 @@
   padding-bottom: 40px;
 }
 
+.contacts .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contacts .header .search {
+  font-family: 'regular', sans-serif;
+  margin-right: 15px;
+  margin-left: auto;
+  border: 1px solid #e7e7e7;
+  background-color: #fff;
+  border-radius: 3px;
+  height: 30px;
+}
+
 .contacts .list {
   padding: 0 15px;
 }

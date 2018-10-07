@@ -17,12 +17,14 @@ type ContactsViewProps = {
 type ContactsViewState = {
   isLoading: boolean,
   contactsList: Array<Person>;
+  search: string,
 };
 
 class ContactsView extends React.Component<ContactsViewProps, ContactsViewState> {
   state = {
     isLoading: true,
     contactsList: [],
+    search: '',
   }
 
   static defaultProps = {
@@ -31,8 +33,16 @@ class ContactsView extends React.Component<ContactsViewProps, ContactsViewState>
 
   static getDerivedStateFromProps(nextProps: ContactsViewProps, nextState: ContactsViewState) {
     if (nextState && nextState.contactsList.length > 0) {
+      const search = nextState.search;
+      const contactsList: Array<Person> = nextState.contactsList
+        .map((person: Person, index: number): Person => ({
+          ...person,
+          order: index,
+        }));
+
       return {
-        contactsList: nextState.contactsList,
+        contactsList,
+        search,
       }
     }
     if (nextProps.contactsList.length > 0) {
@@ -44,6 +54,15 @@ class ContactsView extends React.Component<ContactsViewProps, ContactsViewState>
     return null;
   }
 
+  static mapOrder = (contactsList: Array<Person>): Array<Person> => {
+    return contactsList.map((person: Person, index: number) => (
+      {
+        ...person,
+        order: index,
+      }
+    ));
+  }
+
   componentDidMount() {
     const { fetchPersonsData } = this.props;
     fetchPersonsData();
@@ -51,7 +70,7 @@ class ContactsView extends React.Component<ContactsViewProps, ContactsViewState>
 
   render() {
     const { showModal } = this.props;
-    const { isLoading, contactsList } = this.state;
+    const { isLoading, contactsList, search } = this.state;
 
     const SortableItem = SortableElement(
       ({index, person}) => <ContactListItem key={index} data={person} showModal={showModal} />
@@ -69,17 +88,23 @@ class ContactsView extends React.Component<ContactsViewProps, ContactsViewState>
       );
     });
 
+    const searchedContacts = contactsList.filter((person: Person) => {
+      const name = person.name.toString().toLowerCase();
+      return name.includes(search);
+    });
+
     if (isLoading) {
       return <Loader />;
     }
 
     return (
       <div className="contacts">
-        <h1>People's List</h1>
-        <div className="separator"/>
-        <div className="list">
-          <SortableList contactsList={contactsList} pressDelay={100} onSortEnd={this.onSortEnd}/>
+        <div className="header">
+          <h1>People's List</h1>
+          <input type="text" placeholder="Search" className="search" onChange={this.handleSearch}/>
         </div>
+        <div className="separator"/>
+        <SortableList contactsList={searchedContacts} pressDelay={100} onSortEnd={this.onSortEnd}/>
       </div>
     )
   }
@@ -89,7 +114,12 @@ class ContactsView extends React.Component<ContactsViewProps, ContactsViewState>
     this.setState({
       contactsList: arrayMove(contactsList, oldIndex, newIndex),
     });
-  };
+  }
+
+  handleSearch = ({ target }: any) => {
+    const search = target.value.toString()
+    this.setState({ search });
+  }
 
 }
 
